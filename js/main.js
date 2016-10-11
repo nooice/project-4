@@ -54,7 +54,7 @@
         hideWinPage();
     //set event listener for start button
         $('#start a').on('click', function(){
-            userName = prompt('enter a name to play')
+            userName = prompt('enter a name to play');
             hideStartPage();
             showBoard();
             //show player ones turn
@@ -80,9 +80,9 @@
         
         $('.box').each(function(){
             if ($(this).hasClass('box-filled-1')){
-                checkedO.push(counter)
+                checkedO.push(counter);
             } else if ($(this).hasClass('box-filled-2')){
-                checkedX.push(counter)
+                checkedX.push(counter);
             }
             counter++;
         });
@@ -108,10 +108,10 @@
             }
         }
         if (checkedX.length >= 3){
-            for (var i = 0; i < winCombo.length; i++){
+            for (i = 0; i < winCombo.length; i++){
                 xPoints = 0;
-                for (var x = 0; x < winCombo[i].length; x++){
-                    for (var z = 0; z < checkedX.length; z++){
+                for (x = 0; x < winCombo[i].length; x++){
+                    for (z = 0; z < checkedX.length; z++){
                         if (checkedX[z].toString() === winCombo[i][x].toString()){
                             xPoints++;
                             if(xPoints >= 3){
@@ -181,10 +181,10 @@
             $('.box').removeClass('box-filled-2');
             $('.box').css('background-image', 'none');
             hideWinPage();
-            $('#finish').removeClass('screen-win-tie screen-win-one screen-win-two')
+            $('#finish').removeClass('screen-win-tie screen-win-one screen-win-two');
             showBoard();
             $('#player1').addClass('active');
             $('#player2').removeClass('active');
             turnCounter = 0;
-        })
+        });
 }();
