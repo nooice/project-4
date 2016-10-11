@@ -26,6 +26,9 @@ h1 {
   transition: 0.25s ease; }
   .button:hover {
     color: #000; }
+#username{
+    padding-left: 18%;
+}
 
 .screen {
   text-align: center;
