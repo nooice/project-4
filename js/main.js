@@ -169,7 +169,7 @@
                 $(this).addClass('box-filled-1');
                 $('#player1').removeClass('active');
                 $('#player2').addClass('active');
-            } else ($('#player2').hasClass('active')){
+            } else if ($('#player2').hasClass('active')){
                 $(this).addClass('box-filled-2');
                 $('#player2').removeClass('active');
                 $('#player1').addClass('active');
