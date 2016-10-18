@@ -5,7 +5,7 @@
     //*********//
         var turnCounter = 0;
         var computerOption = document.getElementsByClassName('box');
-        var userName;
+       // var userName;
     //build start screen and winner screen
         $('body').append('<div class="screen screen-start" id="start"><header><h1>Tic Tac Toe</h1><a href="#" class="button">Start game</a></header></div>');
         $('body').append('<div class="screen screen-win" id="finish"><header><h1>Tic Tac Toe</h1><p class="message"></p><a href="#" class="button">New game</a></header></div>');
@@ -54,11 +54,11 @@
         hideWinPage();
     //set event listener for start button
         $('#start a').on('click', function(){
-            userName = prompt('enter a name to play');
+            /*userName = prompt('enter a name to play');*/
             hideStartPage();
             showBoard();
             //show player ones turn
-            $('#player1').after("<h2 id='username'>" + userName + "</h2>");
+           /* $('#player1').after("<h2 id='username'>" + userName + "</h2>");*/
             $('#player1').addClass('active');
             
         });
@@ -96,9 +96,7 @@
                             if(oPoints >= 3){
                                 hideBoard();
                                 $('#finish').addClass('screen-win-one');
-                                if (userName === ''){
-                                   $('#finish p').text("O Wins!"); 
-                                }else $('#finish p').text(userName + " Wins!");
+                                $('#finish p').text("O Wins!");
                                 showWinPage();
                                 return;
                             }   
@@ -135,7 +133,7 @@
         }
         
     }
-    
+    /*
     //computer player
         function aiTurn() {
             if (turnCounter === 9){
@@ -160,7 +158,7 @@
                 checkWinner();  
             }
             
-        }
+        } */
     
     
     //X's and O's
@@ -171,9 +169,13 @@
                 $(this).addClass('box-filled-1');
                 $('#player1').removeClass('active');
                 $('#player2').addClass('active');
+            } else ($('#player2').hasClass('active')){
+                $(this).addClass('box-filled-2');
+                $('#player2').removeClass('active');
+                $('#player1').addClass('active');
             }
             checkWinner();
-            aiTurn();
+           /* aiTurn(); */
         });
     //restart game
         $('#finish a').on('click', function(){
